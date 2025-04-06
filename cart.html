@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng - Nike Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Nike Store</div>
+        <nav>
+            <a href="index.html">Trang chủ</a>
+        </nav>
+    </header>
+    <section class="cart-container">
+        <h2>Giỏ hàng của bạn</h2>
+        <div class="cart-items">
+        </div>
+        <h2>Thanh toán</h2>
+        <form class="checkout-form">
+            <input type="text" placeholder="Họ và tên" required>
+            <input type="text" placeholder="Địa chỉ" required>
+            <button type="submit">Thanh toán</button>
+        </form>
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const cartContainer = document.querySelector(".cart-items");
+            
+            if (cart.length === 0) {
+                cartContainer.innerHTML = "<p>Chưa có sản phẩm nào trong giỏ hàng.</p>";
+            } else {
+                cartContainer.innerHTML = "";
+                cart.forEach((item, index) => {
+                    const productElement = document.createElement("div");
+                    productElement.classList.add("cart-item");
+                    productElement.innerHTML = `
+                        <p>${item.name} - ${item.price}đ</p>
+                        <button class="remove-item" data-index="${index}">Xóa</button>
+                    `;
+                    cartContainer.appendChild(productElement);
+                });
+                
+                document.querySelectorAll(".remove-item").forEach(button => {
+                    button.addEventListener("click", function () {
+                        let cart = JSON.parse(localStorage.getItem("cart"));
+                        cart.splice(this.dataset.index, 1);
+                        localStorage.setItem("cart", JSON.stringify(cart));
+                        location.reload();
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

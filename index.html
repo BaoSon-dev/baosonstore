@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ - Nike Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .product-grid {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px;
+            white-space: nowrap;
+        }
+        .product {
+            flex: 0 0 auto;
+            width: 250px;
+            text-align: center;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .banner {
+            background: url('./banner.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            width: 100%;
+        }
+        .banner h1 {
+            font-size: 48px;
+            font-weight: bold;
+        }
+        .banner p {
+            font-size: 20px;
+        }
+        header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+        header .logo {
+            margin-left: 20px;
+        }
+        nav {
+            margin-right: 20px;
+        }
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Nike Store</div>
+        <nav>
+            <a href="index.html">Trang chủ</a>
+            <a href="login.html">Đăng nhập</a>
+            <a href="register.html">Đăng ký</a>
+            <a href="cart.html">Giỏ hàng</a>
+        </nav>
+    </header>
+    <section class="banner">
+        <h1>Bộ Sưu Tập Giày Mới Nhất</h1>
+        <p>Khám phá những thiết kế đột phá từ Nike</p>
+    </section>
+    
+    <section class="product-category">
+        <h2>Giày Chạy Bộ</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="running1.jpg" alt="Nike Air Zoom Pegasus">
+                <h3>Nike Air Zoom Pegasus</h3>
+                <p>3.500.000đ</p>
+                <button class="add-to-cart" data-name="Nike Air Zoom Pegasus" data-price="3500000">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product">
+                <img src="running2.jpg" alt="Nike React Infinity">
+                <h3>Nike React Infinity</h3>
+                <p>4.200.000đ</p>
+                <button class="add-to-cart" data-name="Nike React Infinity" data-price="4200000">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="product-category">
+        <h2>Giày Bóng Rổ</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="basketball1.jpg" alt="Nike Lebron 20">
+                <h3>Nike Lebron 20</h3>
+                <p>5.000.000đ</p>
+                <button class="add-to-cart" data-name="Nike Lebron 20" data-price="5000000">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product">
+                <img src="basketball2.jpg" alt="Nike KD 15">
+                <h3>Nike KD 15</h3>
+                <p>4.800.000đ</p>
+                <button class="add-to-cart" data-name="Nike KD 15" data-price="4800000">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="product-category">
+        <h2>Giày Lifestyle</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="lifestyle1.jpg" alt="Nike Air Force 1">
+                <h3>Nike Air Force 1</h3>
+                <p>3.000.000đ</p>
+                <button class="add-to-cart" data-name="Nike Air Force 1" data-price="3000000">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product">
+                <img src="lifestyle2.jpg" alt="Nike Dunk Low">
+                <h3>Nike Dunk Low</h3>
+                <p>3.500.000đ</p>
+                <button class="add-to-cart" data-name="Nike Dunk Low" data-price="3500000">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>
